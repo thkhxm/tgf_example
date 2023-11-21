@@ -19,3 +19,9 @@
 
 # Go workspace file
 go.work
+/.idea/modules.xml
+/.idea/tgf_example.iml
+/.idea/vcs.xml
+/quick-start/log/tgf.log
+/go.sum
+/.idea/git_toolbox_prj.xml

@@ -1,0 +1,1 @@
+#protoc --go_out=./common --csharp_out=./common/pb --plugin=./kit/proto/mac/protoc-gen-go ./common/pb/*.proto
