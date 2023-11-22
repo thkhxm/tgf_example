@@ -1,0 +1,10 @@
+[
+	{
+		"Id":"100001",
+		"StyleId":"1",
+		"Name":"灵力",
+		"EffectType":"1",
+		"EffectValues":["1"],
+		"Desc":"人物数值，增加灵力"
+	}
+]

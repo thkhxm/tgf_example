@@ -26,3 +26,5 @@ go.work
 /common/go.sum
 /.idea/git_toolbox_prj.xml
 /go.work.sum
+/kit/log/tgf.log
+*.log

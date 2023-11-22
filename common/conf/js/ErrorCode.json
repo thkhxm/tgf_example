@@ -1,0 +1,20 @@
+[
+	{
+		"Code":100001,
+		"Message":"账号密码不存在",
+		"FieldName":"AccountNotFound",
+		"Desc":""
+	},
+	{
+		"Code":404,
+		"Message":"系统异常",
+		"FieldName":"SystemErr",
+		"Desc":""
+	},
+	{
+		"Code":200001,
+		"Message":"挑战条件不符",
+		"FieldName":"ChallengeMapConditionFailed",
+		"Desc":""
+	}
+]

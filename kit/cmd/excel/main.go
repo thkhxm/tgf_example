@@ -2,8 +2,10 @@ package main
 
 import (
 	"github.com/thkhxm/tgf"
+	"github.com/thkhxm/tgf/component"
 	"github.com/thkhxm/tgf/db"
 	"github.com/thkhxm/tgf/util"
+	"github.com/thkhxm/tgf_example/common/conf"
 )
 
 // ***************************************************
@@ -23,38 +25,39 @@ func main() {
 	util.SetExcelToGoPath("../common/conf")
 	//设置excel导出的json文件路径
 	util.SetExcelToJsonPath("../common/conf/js")
-	util.SetExcelToJsonPath("E:\\unity\\project\\t2\\Assets\\Config\\js")
+	//给前端路径也导出一份
+	//util.SetExcelToJsonPath("E:\\unity\\project\\t2\\Assets\\Config\\js")
 	//开始导出excel
 	util.ExcelExport()
 
-	////设置配置源数据路径
-	//component.WithConfPath("../common/conf/js")
-	////初始化游戏配置到内存中
-	//component.InitGameConfToMem()
-	////获取配置数据
-	//codes := component.GetAllGameConf[*conf.ErrorCodeConf]()
-	////初始化结构化kv数据源
-	//data := make([]util.TemplateKeyValueData, len(codes), len(codes))
-	//for i, code := range codes {
-	//	data[i] = util.TemplateKeyValueData{
-	//		FieldName: code.FieldName,
-	//		Values:    code.Code,
-	//	}
-	//}
-	////将数据源写入文件 生成kv结构文件
-	//util.JsonToKeyValueGoFile("errorcodes", "error_code", "../common/define/errorcode", "int32", data)
-	////
-	////获取配置数据
-	//c := component.GetAllGameConf[*conf.ConstantConf]()
-	////初始化结构化kv数据源
-	//d := make([]util.TemplateKeyValueData, len(c), len(c))
-	//for i, code := range c {
-	//	d[i] = util.TemplateKeyValueData{
-	//		FieldName: code.Key,
-	//		Values:    code.Key,
-	//	}
-	//}
-	////将数据源写入文件 生成kv结构文件
-	//util.JsonToKeyValueGoFile("constant", "constant_key", "../common/define/constant", "string", d)
+	//设置配置源数据路径
+	component.WithConfPath("../common/conf/js")
+	//初始化游戏配置到内存中
+	component.InitGameConfToMem()
+	//获取配置数据
+	codes := component.GetAllGameConf[*conf.ErrorCodeConf]()
+	//初始化结构化kv数据源
+	data := make([]util.TemplateKeyValueData, len(codes), len(codes))
+	for i, code := range codes {
+		data[i] = util.TemplateKeyValueData{
+			FieldName: code.FieldName,
+			Values:    code.Code,
+		}
+	}
+	//将数据源写入文件 生成kv结构文件
+	util.JsonToKeyValueGoFile("errorcodes", "error_code", "../common/define/errorcode", "int32", data)
+	//
+	//获取配置数据
+	c := component.GetAllGameConf[*conf.ConstantConf]()
+	//初始化结构化kv数据源
+	d := make([]util.TemplateKeyValueData, len(c), len(c))
+	for i, code := range c {
+		d[i] = util.TemplateKeyValueData{
+			FieldName: code.Key,
+			Values:    code.Key,
+		}
+	}
+	//将数据源写入文件 生成kv结构文件
+	util.JsonToKeyValueGoFile("constant", "constant_key", "../common/define/constant", "string", d)
 
 }
