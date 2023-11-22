@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/thkhxm/tgf/util"
+	"github.com/thkhxm/tgf_example/common/service"
 )
 
 //***************************************************
@@ -17,7 +18,7 @@ func main() {
 	util.SetAutoGenerateAPICodePath("../common/api")
 	util.SetGenerateFileNameSuffix("rpc")
 	//util.SetAutoGenerateAPICSCode("E:\\unity\\project\\t2\\Assets\\HotFix\\Code", "HotFix.Code")
-	//util.GeneratorAPI[service.ILoginService](login.ModuleName, login.Version, "api")
+	util.GeneratorRPC[service.IBRPCService]("b", "v1.0", "bservice", "b")
 	//util.GeneratorRPC[service.IUserRPCService](user.ModuleName, user.Version, "userservice", "user")
 	//util.GeneratorRPC[service.IFightRPCService](fight.ModuleName, fight.Version, "fightservice", "fight")
 	//util.GeneratorRPC[service.IMatchRPCService](match.ModuleName, match.Version, "matchservice", "match")

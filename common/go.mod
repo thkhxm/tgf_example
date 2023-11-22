@@ -1,4 +1,4 @@
-module github.com/thkhxm/tgf_example
+module github.com/thkhxm/tgf_example/common
 
 go 1.21.1
 

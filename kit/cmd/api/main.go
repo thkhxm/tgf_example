@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/thkhxm/tgf/util"
+	"github.com/thkhxm/tgf_example/common/service"
 )
 
 //***************************************************
@@ -15,8 +16,8 @@ import (
 
 func main() {
 	util.SetAutoGenerateAPICodePath("../common/api")
-	util.SetAutoGenerateAPICSCode("E:\\unity\\project\\t2\\Assets\\HotFix\\Code", "HotFix.Code")
-	//util.GeneratorAPI[service.ILoginService](login.ModuleName, login.Version, "api")
+	//util.SetAutoGenerateAPICSCode("E:\\unity\\project\\t2\\Assets\\HotFix\\Code", "HotFix.Code")
+	util.GeneratorAPI[service.IAService]("a", "v1.0", "api")
 	//util.GeneratorAPI[service.IMatchService](match.ModuleName, match.Version, "api")
 	//util.GeneratorAPI[service.IMapLevelService](maplevel.ModuleName, maplevel.Version, "api")
 	//util.GeneratorAPI[service.IPropService](prop.ModuleName, prop.Version, "api",

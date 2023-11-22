@@ -23,5 +23,6 @@ go.work
 /.idea/tgf_example.iml
 /.idea/vcs.xml
 /quick-start/log/tgf.log
-/go.sum
+/common/go.sum
 /.idea/git_toolbox_prj.xml
+/go.work.sum
