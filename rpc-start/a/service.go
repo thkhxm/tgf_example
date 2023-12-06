@@ -52,9 +52,9 @@ func (s *Service) Startup() (bool, error) {
 
 func Startup() {
 	c := rpc.NewRPCServer(). //创建一个rpc服务
-					WithGatewayWS("8032", "/example"). //启动一个网关
-					WithService(&Service{}).           //启动一个service的服务
-					WithWhiteService("Buy").           //添加该rpc到白名单,无需登录即可访问
+					WithGatewayWS("8032", "/example", nil). //启动一个网关
+					WithService(&Service{}).                //启动一个service的服务
+					WithWhiteService("Buy").                //添加该rpc到白名单,无需登录即可访问
 					WithCache(tgf.CacheModuleClose).
 					WithRandomServicePort(8000, 8010).
 					Run()
